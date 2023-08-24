@@ -122,13 +122,22 @@ const DetermineWinner=()=>{
         return 'draw';
         }
     }}
-    
+let player1name='',player2name='';  
 const currentgame=GameDisplay();
-const player1=Player('Dennis');
-const player2=Player('Reuben');
 const play=Playround();
-const buttons=document.querySelectorAll('button');
+const buttons=document.querySelectorAll('.main>button');
 const divDisplay=document.querySelector('.display');
+const button=document.querySelector('dialog button');
+const playdialog=document.querySelector('dialog');
+button.addEventListener('click',()=>{
+    const player1input=document.querySelector('#Player1');
+    const player2input=document.querySelector('#Player2');
+    player1.playername=player1input.value;
+    player2.playername=player2input.value; 
+    playdialog.close();
+})
+const player1=Player(player1name);
+const player2=Player(player2name);  
 buttons.forEach(button=>{
     button.addEventListener('click',function(){
         let data_key=button.getAttribute('data');
@@ -149,3 +158,4 @@ buttons.forEach(button=>{
         
     })
 });
+
