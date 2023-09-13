@@ -216,7 +216,7 @@ function PlayerVaI(){
     let myCoordinates=this.getAttribute('data');
     let myArrayCoordinates=myCoordinates.split('-');
     this.textContent=gamePlay.changeBoard(...myArrayCoordinates);
-    timeout=setTimeout(unbeatableAi,1000);
+    timeout=setTimeout(unbeatableAi,550);
     if(player1.playercount>2 || player2.playercount>2){
         display.textContent=gamePlay.determineWinner();
     }
@@ -256,6 +256,7 @@ function unbeatableAi(){
     if(player1.playercount>2 || player2.playercount>2){
         display.textContent=gamePlay.determineWinner();
     }
+    fc=0;
 }
 function Converttoflatboard(array2D){
     let oneDArray = [].concat.apply([], array2D);
